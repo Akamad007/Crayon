@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+
+{% block body %}
+	
+        <!-- Latest work -->
+        <div class="work-container">
+	        <div class="container">
+	     		<a href="/api/add/"> <button type="button" class="btn">Add Favicons</button></a>
+	     		<a href="/api/all/"> <button type="button" class="btn">All from the file</button></a>
+	     		<br /><br />
+	            <div class="row">
+	            	<table class="table table-bordered">
+		            	   <tbody>
+		            	   	
+		            	   			 <th>  Name </th>
+							         <th>  Base Url </th>
+							         <th>  Favicon Url </th>	
+							           <th>  Image </th>	
+							          <th>  Date Time </th>								        		            	   		
+			        			{% for favicon in faviconObjects %}		        							        				  						        					        				
+				        			<tr>					        				
+								       
+							               <td>  {{ favicon.user }} </td>
+							               <td> {{ favicon.base_url }}</td>
+							               <td>  {{ favicon.favicon }}</td>
+							                <td>  <img src="{{ favicon.favicon }}"/></td>
+							               <td>  {{ favicon.createdDateTime }}</td>
+							              	        				
+				        			</tr>				        				        							        							        						
+			        			{% endfor %}
+	        				</tbody>	
+	        			</table> 
+	            </div>
+	            
+	        </div>
+        </div>
+
+ 
+	
+{% endblock %}
